@@ -12,6 +12,7 @@ return {
     "nvim-tree/nvim-web-devicons",
   },
   opts = {
+    lang = "golang",
     cn = { -- leetcode.cn
       enabled = true, ---@type boolean
       translator = true, ---@type boolean
