@@ -10,6 +10,10 @@ return {
       mappings = {
         ask = "<leader>av",
       },
+      file_selector = {
+        provider = "fzf",
+        provider_opts = {},
+      },
       behaviour = {
         auto_suggestions = false,
       },
@@ -48,6 +52,27 @@ return {
           file_types = { "markdown", "Avante" },
         },
         ft = { "markdown", "Avante" },
+      },
+      {
+        "saghen/blink.compat",
+        lazy = true,
+        opts = {},
+        config = function()
+          -- monkeypatch cmp.ConfirmBehavior for Avante
+          require("cmp").ConfirmBehavior = {
+            Insert = "insert",
+            Replace = "replace",
+          }
+        end,
+      },
+      {
+        "saghen/blink.cmp",
+        lazy = true,
+        opts = {
+          sources = {
+            compat = { "avante_commands", "avante_mentions", "avante_files" },
+          },
+        },
       },
     },
   },
