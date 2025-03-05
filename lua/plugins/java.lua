@@ -82,6 +82,8 @@ return {
     }
   end,
   config = function(_, opts)
+    vim.env.JAVA_HOME = "/Library/Java/JavaVirtualMachines/jdk-17.jdk/Contents/Home"
+
     -- Find the extra bundles that should be passed on the jdtls command-line
     -- if nvim-dap is enabled with java debug/test.
     local mason_registry = require("mason-registry")
