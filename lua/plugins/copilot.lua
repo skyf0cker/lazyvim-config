@@ -13,16 +13,22 @@ return {
         temperature = 0,
         max_tokens = 8000,
       },
-      auto_suggestions_provider = "copilot",
+      auto_suggestions_provider = "gemini",
       mappings = {
         ask = "<leader>av",
+        suggestion = {
+          accept = "<M-l>",
+          next = "<M-]>",
+          prev = "<M-[>",
+          dismiss = "<C-]>",
+        },
       },
       file_selector = {
         provider = "fzf",
         provider_opts = {},
       },
       behaviour = {
-        auto_suggestions = true,
+        auto_suggestions = false,
         enable_cursor_planning_mode = true, -- enable cursor planning mode!
       },
       cursor_applying_provider = "groq", -- In this example, use Groq for applying, but you can also use any provider you want.
